@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 900px;
+  margin: auto;
+}
+
+#welcome {
+  background-color: #400;
+  color: #fff;
+  text-align: center;
+}
+
+.right {
+	margin: 0;
+	padding: 0;
+	float: right;
+	text-align: right;
+}
+
+.right a:hover {
+	color: blue;
+}
+
+.right a:visited {
+	color: white;
+}
+
+#profile {
+  margin-bottom: 10px;
+}
+
+/* 取得したタイムライン */
+.timeline {
+  margin: 2px 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/* ツイートしたユーザのアイコン */
+.user_icon {
+
+}
+
+/* ツイートしたユーザの名前 */
+.user_name {
+  font-size: 11px;
+}
+
+/* ツイート本文 */
+.user_tweet {
+  font-size: 12px;
+}
