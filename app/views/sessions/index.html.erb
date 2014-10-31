@@ -1,0 +1,13 @@
+<% if @current_user %>
+  <div id='welcome'>
+  	Welcome <%= @current_user.name %>
+  	<div class="right"><%= link_to "Sign out", '/signout' %></div>
+  	<ul>
+  <li style="list-style: none;"><%= link_to "Show Your Timeline!", messages_path %></li> 
+</ul>
+  </div>
+<% else %>
+<div class="info">
+  <%= link_to "Sign in with Twitter", "/auth/twitter" %> 
+</div>
+<% end %>

@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
         config.access_token_secret = session[:oauth_token_secret]
       end
       @user = twitter_client.user
-      @timeline = twitter_client.home_timeline
+      @timeline = twitter_client.home_timeline(:count=>200)
       @result = :success
     else
       @result = :not_signed_in

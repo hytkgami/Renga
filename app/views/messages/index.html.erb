@@ -1,31 +1,23 @@
-<%= form_tag({action: 'create'}, {method: 'post'}) do %>
-  <%= text_field_tag(:message) %>
-  <%= submit_tag(:submit) %>
-<% end %>
-<%= link_to "TOP", "/" %>
-<div>
-<div id="profile">
-<%= image_tag @user.profile_image_url, class: 'user_icon' %>
-	<p id="user_id">ID: <%= @user.screen_name %></p>
-	<p id="user_name">名前: <%= @user.name %></p>
-	<p id="location">居住地: <%= @user.location %></p>
-	<p id="description">bio: <%= @user.description %></p>
-	<p id="fav_cnt">ふぁぼ数: <%= @user.favorites_count %></p>
-	<p id="followers_cnt">フォロワー数: <%= @user.followers_count %></p>
-	<p id="friends_cnt">フレンド数: <%= @user.friends_count %></p>
-	<p id="tweets_cnt">投稿数: <%= @user.statuses_count %></p>
+<div class="info">
+<%= @user.name %> / @<%= @user.screen_name %> でログイン中
+<%= link_to "Signout", "/signout", class: 'signout' %>
 </div>
+<div id="wrap">
 <% @timeline.each do |tw| %>
-<% p tw.attrs %>
-<hr>
-<div class="timeline">
-<%= image_tag tw.user.profile_image_url, class: 'user_icon' %>
-<div class="tweet">
-	<p class="user_name"><%= tw.user.name %> / @<%= tw.user.screen_name %></p>
-	<p class="user_tweet"><%= tw.text %></p>
-	<p class="created"><%= tw.created_at %></p>
-</div>
-</div>
-<hr>
+	<% if tw.media? %>
+	<div class="box">
+		<% tw.media.each do |media| %>
+			<%= image_tag media.media_url, class: 'pic' %>
+		<% end %>
+		<p><%= tw.text %></p>
+		<div class="details">
+			<p>Posted<%= tw.created_at %></br>
+				favorited: <%= tw.favorite_count %></br>
+				retweeted: <%= tw.retweet_count %></p>
+		</div>
+		<%= image_tag tw.user.profile_image_url, class: 'icon' %>
+		<h1><%= tw.user.name %> / @<%= tw.user.screen_name %></h1>
+		</div>
+	<% end %>
 <% end %>
 </div>

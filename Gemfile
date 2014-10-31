@@ -49,3 +49,4 @@ gem 'figaro'
 # エラー画面の設定
 gem  'better_errors'
 
+gem 'rails_12factor'
