@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
@@ -41,8 +40,7 @@ gem 'spring',        group: :development
 # Oauth認証
 gem 'omniauth-twitter'
 
-gem 'twitter'
-
+gem 'twitter', '>= 5.15.0'
 # キーの管理
 gem 'figaro'
 
@@ -50,3 +48,5 @@ gem 'figaro'
 gem  'better_errors'
 
 gem 'rails_12factor'
+
+gem 'pry-rails', group: :development
